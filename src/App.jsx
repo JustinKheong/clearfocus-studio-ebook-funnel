@@ -25,13 +25,8 @@ function Brand() {
   return <a className="brand" href="#/home" aria-label="ClearFocus Studio home"><span />CLEARFOCUS STUDIO</a>;
 }
 
-function DemoNote() {
-  return <div className="demo-note"><ShieldCheck size={18} weight="fill" /> Portfolio demo: forms are not saved or emailed, and checkout never charges you.</div>;
-}
-
 function Header() {
   return <>
-    <DemoNote />
     <header className="site-header"><div className="shell nav-wrap">
       <Brand />
       <nav aria-label="Primary navigation">
@@ -100,12 +95,12 @@ function Home({ go }) {
 }
 
 function FunnelShell({ children, title = "" }) {
-  return <div className="funnel-page"><DemoNote /><header className="simple-header"><div className="shell"><Brand /><span>{title}</span></div></header>{children}<Footer /></div>;
+  return <div className="funnel-page"><header className="simple-header"><div className="shell"><Brand /><span>{title}</span></div></header>{children}<Footer /></div>;
 }
 
 function Thanks({ go }) {
   return <FunnelShell title="Your download is ready"><main>
-    <section className="thanks-hero"><div className="shell"><span className="success-mark"><Check size={34} weight="bold" /></span><p className="eyebrow">THANK YOU</p><h1>Your Focus Reset is ready.</h1><p>Download the guide now. Your details were validated only in the page and were not saved or sent anywhere.</p><a className="button" href="downloads/the-focus-reset.pdf" download><DownloadSimple /> Download The Focus Reset</a></div></section>
+    <section className="thanks-hero"><div className="shell"><span className="success-mark"><Check size={34} weight="bold" /></span><p className="eyebrow">THANK YOU</p><h1>Your Focus Reset is ready.</h1><a className="button" href="downloads/the-focus-reset.pdf" download><DownloadSimple /> Download The Focus Reset</a></div></section>
     <section className="upsell"><div className="shell upsell-grid"><div className="upsell-image"><img src="assets/focus-planner-mockup.png" alt="The Focus Planner with sample printable pages" /></div><div className="upsell-copy"><p className="eyebrow">OPTIONAL ONE-TIME OFFER</p><h2>Turn focused ideas into a plan you can use.</h2><p>The Focus Planner gives you a calm, repeatable system for choosing priorities, protecting focus time and learning from distractions.</p><ul>{["Daily focus planning page","Weekly overview and review","Distraction log","Filled example to get you started","Reusable printable PDF"].map(x=><li key={x}><CheckCircle weight="fill" />{x}</li>)}</ul><div className="price"><small>THE FOCUS PLANNER</small><strong>US$19</strong><span>one-time demo purchase</span></div><button className="button wide" onClick={()=>go("checkout")}>Get The Focus Planner <ArrowRight /></button><button className="text-link" onClick={()=>document.querySelector("#free-download")?.scrollIntoView({behavior:"smooth"})}>No thanks, keep my free guide</button></div></div></section>
     <section id="free-download" className="free-reminder"><div className="shell"><DownloadSimple size={30}/><div><h3>Your free guide is yours either way.</h3><p>Skipping the planner does not affect your download.</p></div><a href="downloads/the-focus-reset.pdf" download>Download free Ebook</a></div></section>
   </main></FunnelShell>;
@@ -119,11 +114,11 @@ function Checkout({ go }) {
 }
 
 function Success({ go }) {
-  return <FunnelShell title="Demo purchase complete"><main className="purchase-success"><div className="shell success-grid"><div><span className="success-mark"><Check size={34} weight="bold" /></span><p className="eyebrow">DEMO PURCHASE COMPLETE</p><h1>Your Focus Planner is ready.</h1><p>No money was charged and no personal information was collected. Download the complete printable planner below.</p><a className="button" href="downloads/the-focus-planner.pdf" download><DownloadSimple /> Download The Focus Planner</a><button className="text-link home-link" onClick={()=>go("home")}>Return to homepage <ArrowRight /></button></div><img src="assets/focus-planner-mockup.png" alt="The Focus Planner printable set" /></div></main></FunnelShell>;
+  return <FunnelShell title="Demo purchase complete"><main className="purchase-success"><div className="shell success-grid"><div><span className="success-mark"><Check size={34} weight="bold" /></span><p className="eyebrow">DEMO PURCHASE COMPLETE</p><h1>Your Focus Planner is ready.</h1><p>Download the complete printable planner below.</p><a className="button" href="downloads/the-focus-planner.pdf" download><DownloadSimple /> Download The Focus Planner</a><button className="text-link home-link" onClick={()=>go("home")}>Return to homepage <ArrowRight /></button></div><img src="assets/focus-planner-mockup.png" alt="The Focus Planner printable set" /></div></main></FunnelShell>;
 }
 
 function Footer() {
-  return <footer><div className="shell"><Brand /><p>Independent portfolio demonstration. No data is stored; no purchase is processed.</p><a href="#/home">Home</a></div></footer>;
+  return <footer><div className="shell"><Brand /><a href="#/home">Home</a></div></footer>;
 }
 
 export function App() {

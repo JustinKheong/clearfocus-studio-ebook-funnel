@@ -17,7 +17,7 @@
 - Spacing and layout rhythm: navigation, two-column hero, full-width form CTA, benefit dividers, section spacing, card radii, and white space follow the source. The final hero no longer overlaps at the 720 px breakpoint.
 - Colors and tokens: warm cream `#f7f2e9`, deep forest `#082f26`, orange `#ef5b22`, soft green, white surfaces, and low-contrast borders consistently map to the reference.
 - Image quality and asset fidelity: both product mockups are original high-resolution raster assets. The Focus Reset mockup is a 1448 x 1086 transparent PNG; the Focus Planner mockup is a 1448 x 1086 PNG. They preserve the dark green cover, orange contour pattern, cream pages, and editorial product-lighting direction.
-- Copy and content: all visible interface copy is selectable HTML. No fabricated testimonial, rating, customer, sales, conversion, or countdown claim is present. Demo and privacy boundaries are explicit.
+- Copy and content: all visible interface copy is selectable HTML. No fabricated testimonial, rating, customer, sales, conversion, or countdown claim is present. The payment simulation boundary remains explicit only where it is relevant in checkout.
 - Icons: Phosphor icons provide a consistent rounded line/fill family and replace all non-brand interface symbols.
 - Responsiveness and accessibility: responsive grids collapse at 700 px, dense details adapt at 430 px, inputs and buttons preserve practical tap heights, focus rings are visible, labels and alt text are present, reduced motion is honored, and no fixed-width page shell can create horizontal overflow.
 
@@ -53,6 +53,15 @@ Fixes:
 - Post-fix evidence: `screenshots/design-comparison-home-pass2.png`.
 - The supporting sentence is fully readable, the product image has clear separation, the benefits strip returns to the first viewport, and the source hierarchy is preserved.
 - No actionable P0, P1, or P2 findings remain.
+
+### Scoped update verification - 26 October 2026
+
+- Removed the full-width Demo notice from every route; the brand header now starts at the top edge with no spacer.
+- Removed data-saving and email-delivery explanations from the homepage, Thank You page, purchase success page, and footer.
+- Verified that a valid form submission routes directly to a Thank You page whose first action is the Focus Reset PDF download.
+- Verified that the Checkout page still labels the interaction as simulated, states that no payment is collected, and contains no card fields.
+- Rebuilt the Vite production bundle and reran all four static hosting tests successfully.
+- No new P0, P1, or P2 visual or interaction findings were observed.
 
 ## Follow-up polish
 
